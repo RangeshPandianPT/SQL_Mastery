@@ -1,7 +1,7 @@
 -- ============================================
 -- SQL MASTERY - LESSON 3: SELECT QUERIES
 -- ============================================
--- Author: SQL Learning Path
+-- Author: RangeshPandian PT
 -- Level: Beginner
 -- ============================================
 
