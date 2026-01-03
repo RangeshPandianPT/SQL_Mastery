@@ -1,7 +1,7 @@
 -- ============================================
 -- SQL MASTERY - LESSON 2: INSERTING DATA
 -- ============================================
--- Author: SQL Learning Path
+-- Author: RangeshPandian PT
 -- Level: Beginner
 -- ============================================
 
