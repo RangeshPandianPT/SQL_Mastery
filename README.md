@@ -1,114 +1,63 @@
-# 🎯 SQL Mastery
+# SQL Mastery
 
-> **Learn SQL from scratch** - A comprehensive beginner-friendly course
+Learn SQL from scratch using a structured, hands-on lesson path.
 
-![SQL](https://img.shields.io/badge/SQL-Learning-blue?style=for-the-badge)
-![Level](https://img.shields.io/badge/Level-Beginner-green?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-In%20Progress-yellow?style=for-the-badge)
-
----
-
-## 📚 Course Contents
+## Course Contents
 
 | # | Lesson | Topics Covered |
 |---|--------|----------------|
-| 01 | [Introduction to SQL](01_Introduction_to_SQL.sql) | Databases, Data Types, CREATE TABLE, Constraints, ALTER TABLE |
-| 02 | [INSERT Data](02_INSERT_Data.sql) | Single/Multiple Inserts, INSERT SELECT, UPSERT, Bulk Operations |
-| 03 | [SELECT Queries](03_SELECT_Queries.sql) | SELECT, WHERE, LIKE, IN, BETWEEN, ORDER BY, LIMIT |
-| 04 | [UPDATE & DELETE](04_UPDATE_DELETE.sql) | UPDATE, DELETE, CASE, Transactions, Safe Practices |
+| 00 | [Setup Database](00_Setup_Database.sql) | Create clean schema and seed data for practice |
+| 01 | [Introduction to SQL](01_Introduction_to_SQL.sql) | Databases, data types, CREATE TABLE, constraints, ALTER TABLE |
+| 02 | [INSERT Data](02_INSERT_Data.sql) | Single/multi-row INSERT, INSERT SELECT, UPSERT patterns |
+| 03 | [SELECT Queries](03_SELECT_Queries.sql) | SELECT, filtering, aliases, sorting, limits |
+| 04 | [UPDATE & DELETE](04_UPDATE_DELETE.sql) | Data modifications, safe patterns, CASE updates |
+| 05 | [WHERE Clause](05_WHERE_Clause.sql) | Filtering logic and condition building |
+| 06 | [ORDER BY & LIMIT](06_ORDER_BY_LIMIT.sql) | Sorting and pagination |
+| 07 | [Aggregate Functions](07_Aggregate_Functions.sql) | COUNT, SUM, AVG, MIN, MAX |
+| 08 | [GROUP BY & HAVING](08_GROUP_BY_HAVING.sql) | Grouping rows and filtering grouped data |
+| 09 | [JOINS](09_JOINS.sql) | INNER, LEFT, RIGHT, and join techniques |
+| 10 | [Subqueries](10_Subqueries.sql) | Nested queries and correlated subqueries |
+| 11 | [Functions](11_Functions.sql) | String, numeric, date, and conditional functions |
+| 12 | [CASE Expressions](12_CASE_Expressions.sql) | Conditional output and computed categories |
+| 13 | [Views](13_Views.sql) | Reusable query abstractions |
+| 14 | [Indexes](14_Indexes.sql) | Indexing basics and performance concepts |
+| 15 | [Constraints](15_Constraints.sql) | Data integrity rules and enforcement |
+| 16 | [SQL Challenges](16_SQL_Challenges.sql) | Practice tasks for interview-style problem solving |
+| 16A | [Challenge Answers](16_SQL_Challenges_Answers.sql) | Reference solutions for challenge tasks |
+| 00R | [Reset Database](00_Reset_Database.sql) | Quickly reset environment before rerunning lessons |
 
----
-
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
-- MySQL Server installed (or any SQL database like PostgreSQL, SQLite)
-- A SQL client (MySQL Workbench, DBeaver, VS Code with SQL extension, etc.)
+- MySQL Server (recommended)
+- Any SQL client: MySQL Workbench, DBeaver, VS Code extension, or MySQL CLI
 
-### How to Use
-1. Open files in order (01, 02, 03, 04...)
-2. Read the comments carefully - they explain each concept
-3. Execute the queries one by one to see results
-4. Complete the practice exercises at the end of each file
-5. Check your answers against the provided solutions
+### Suggested Flow
+1. Run [00_Setup_Database.sql](00_Setup_Database.sql)
+2. Complete lessons in numeric order from [01_Introduction_to_SQL.sql](01_Introduction_to_SQL.sql) to [15_Constraints.sql](15_Constraints.sql)
+3. Solve [16_SQL_Challenges.sql](16_SQL_Challenges.sql)
+4. Check with [16_SQL_Challenges_Answers.sql](16_SQL_Challenges_Answers.sql)
+5. Use [00_Reset_Database.sql](00_Reset_Database.sql) whenever you want a fresh start
 
----
+## What Makes This Repo Useful
 
-## 📖 What You'll Learn
+- Lesson-by-lesson progression from basics to intermediate SQL
+- Practice-first design with exercises and reference solutions
+- Re-runnable setup and reset scripts for clean experimentation
+- Realistic sample data across employees, products, and orders tables
 
-### ✅ Lesson 01 - Introduction to SQL
-- What is SQL and why it's important
-- Creating and managing databases
-- Understanding data types (INT, VARCHAR, DATE, etc.)
-- Creating tables with proper structure
-- Using constraints (PRIMARY KEY, UNIQUE, NOT NULL, etc.)
-- Modifying table structure with ALTER
+## Best Practices
 
-### ✅ Lesson 02 - INSERT Data
-- Inserting single and multiple rows
-- Using DEFAULT values
-- INSERT with SELECT (copying data)
-- Handling duplicates with INSERT IGNORE
-- UPSERT with ON DUPLICATE KEY UPDATE
-- Working with dates and NULL values
+1. Always run SELECT before destructive UPDATE/DELETE statements.
+2. Use transactions for important data changes.
+3. Prefer explicit column lists over SELECT * in production queries.
+4. Add indexes only after identifying query bottlenecks.
+5. Keep constraints strong to protect data quality.
 
-### ✅ Lesson 03 - SELECT Queries
-- Basic SELECT syntax
-- Filtering with WHERE clause
-- Comparison operators (=, <>, >, <, etc.)
-- Logical operators (AND, OR, NOT)
-- Pattern matching with LIKE
-- Range queries with BETWEEN and IN
-- Sorting with ORDER BY
-- Pagination with LIMIT and OFFSET
+## Contributing
 
-### ✅ Lesson 04 - UPDATE & DELETE
-- Updating single and multiple rows
-- Conditional updates with CASE
-- Safe update practices
-- Deleting data safely
-- Using transactions (START TRANSACTION, COMMIT, ROLLBACK)
-- Difference between DELETE and TRUNCATE
+Contributions are welcome: more exercises, additional datasets, query optimizations, and clearer explanations.
 
----
+## License
 
-## 🎓 Best Practices
-
-1. **Always backup** before running UPDATE/DELETE
-2. **Use transactions** for important changes
-3. **Test with SELECT** before UPDATE/DELETE
-4. **Use specific columns** instead of SELECT *
-5. **Add comments** to complex queries
-
----
-
-## 📈 Coming Soon
-
-- [ ] Aggregate Functions (COUNT, SUM, AVG, GROUP BY)
-- [ ] JOINs (INNER, LEFT, RIGHT, FULL)
-- [ ] Subqueries & Nested Queries
-- [ ] Indexes & Performance Optimization
-- [ ] Views & Stored Procedures
-- [ ] Advanced SQL Techniques
-
----
-
-## 🤝 Contributing
-
-Feel free to add more examples, exercises, or improve explanations!
-
----
-
-## 📝 License
-
-This project is for educational purposes. Learn, practice, and master SQL! 
-
----
-
-<div align="center">
-
-**Happy Learning! 🚀**
-
-*Start with Lesson 01 and work your way up!*
-
-</div>
+MIT. See [LICENSE](LICENSE).
