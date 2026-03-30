@@ -59,6 +59,4 @@ Learn SQL from scratch using a structured, hands-on lesson path.
 
 Contributions are welcome: more exercises, additional datasets, query optimizations, and clearer explanations.
 
-## License
 
-MIT. See [LICENSE](LICENSE).
