@@ -24,6 +24,7 @@ Learn SQL from scratch using a structured, hands-on lesson path.
 | 15 | [Constraints](15_Constraints.sql) | Data integrity rules and enforcement |
 | 16 | [SQL Challenges](16_SQL_Challenges.sql) | Practice tasks for interview-style problem solving |
 | 16A | [Challenge Answers](16_SQL_Challenges_Answers.sql) | Reference solutions for challenge tasks |
+| 17 | [Advanced SQL](17_Advanced_SQL.sql) | CTEs, window functions, and transactions |
 | 00R | [Reset Database](00_Reset_Database.sql) | Quickly reset environment before rerunning lessons |
 
 ## Getting Started
@@ -34,7 +35,7 @@ Learn SQL from scratch using a structured, hands-on lesson path.
 
 ### Suggested Flow
 1. Run [00_Setup_Database.sql](00_Setup_Database.sql)
-2. Complete lessons in numeric order from [01_Introduction_to_SQL.sql](01_Introduction_to_SQL.sql) to [15_Constraints.sql](15_Constraints.sql)
+2. Complete lessons in numeric order from [01_Introduction_to_SQL.sql](01_Introduction_to_SQL.sql) to [17_Advanced_SQL.sql](17_Advanced_SQL.sql)
 3. Solve [16_SQL_Challenges.sql](16_SQL_Challenges.sql)
 4. Check with [16_SQL_Challenges_Answers.sql](16_SQL_Challenges_Answers.sql)
 5. Use [00_Reset_Database.sql](00_Reset_Database.sql) whenever you want a fresh start
