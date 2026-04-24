@@ -77,4 +77,35 @@ VALUES
 	('Notebook Pack', 'Stationery', 12.99, 500),
 	('Pen Set', 'Stationery', 8.99, 300);
 
-SELECT 'Database reset complete. Now run 00_Setup_Database.sql' AS message;
+-- ============================================
+-- TABLE: orders
+-- ============================================
+CREATE TABLE orders (
+	order_id INT PRIMARY KEY AUTO_INCREMENT,
+	customer_name VARCHAR(100) NOT NULL,
+	product_id INT,
+	quantity INT NOT NULL,
+	order_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+	total_amount DECIMAL(10, 2),
+	status ENUM('Pending', 'Processing', 'Shipped', 'Delivered', 'Cancelled') DEFAULT 'Pending'
+);
+
+INSERT INTO orders (customer_name, product_id, quantity, total_amount, status)
+VALUES
+	('Alice Johnson', 1, 1, 1299.99, 'Delivered'),
+	('Bob Smith', 2, 3, 89.97, 'Shipped'),
+	('Carol Davis', 4, 1, 89.99, 'Processing'),
+	('David Wilson', 5, 2, 599.98, 'Pending'),
+	('Eva Martinez', 6, 1, 499.99, 'Delivered'),
+	('Frank Brown', 3, 2, 99.98, 'Shipped'),
+	('Grace Lee', 7, 10, 129.90, 'Pending'),
+	('Jack Anderson', 2, 5, 149.95, 'Cancelled');
+
+-- ============================================
+-- QUICK CHECKS
+-- ============================================
+SHOW TABLES;
+SELECT COUNT(*) AS teachers_count FROM teachers;
+SELECT COUNT(*) AS employees_count FROM employees;
+SELECT COUNT(*) AS products_count FROM products;
+SELECT COUNT(*) AS orders_count FROM orders;
