@@ -2,7 +2,7 @@
 -- SQL MASTERY - RESET SCRIPT
 -- ============================================
 -- Purpose: Reset the learning environment quickly.
--- It removes the database and recreates it by sourcing setup script logic.
+-- It removes the database and rebuilds the practice schema and seed data.
 -- ============================================
 
 DROP DATABASE IF EXISTS school_management;
