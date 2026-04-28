@@ -56,6 +56,25 @@ Learn SQL from scratch using a structured, hands-on lesson path.
 4. Add indexes only after identifying query bottlenecks.
 5. Keep constraints strong to protect data quality.
 
+## Challenge Practice Path
+
+### Original Challenges (10 problems)
+Start with [16_SQL_Challenges.sql](16_SQL_Challenges.sql) for foundational problem-solving.
+
+### Extended Challenge Set (50+ problems)
+[16_SQL_Challenges_Extended.sql](16_SQL_Challenges_Extended.sql) includes:
+- **Section A (Beginner)**: 5 challenges - SELECT, WHERE, ORDER BY, BETWEEN, IN
+- **Section B (Intermediate)**: 10 challenges - JOINs, GROUP BY, HAVING, CASE, aggregation
+- **Section C (Advanced)**: 10 challenges - Subqueries, CTEs, window functions, ranking
+- **Section D (Real-World)**: 10 practical business scenarios
+- **Section E (Optimization)**: 3 performance and indexing challenges
+- **Section F (Bonus)**: 5 tricky edge cases
+
+### Practice Recommendations
+- **Beginner → Intermediate**: 2-3 months, 1-2 hours/week
+- **Intermediate → Advanced**: 1-2 months, 3-5 hours/week
+- Real-world challenges build portfolio projects for interviews
+
 ## Contributing
 
 Contributions are welcome: more exercises, additional datasets, query optimizations, and clearer explanations.
