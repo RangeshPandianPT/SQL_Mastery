@@ -37,9 +37,10 @@ Learn SQL from scratch using a structured, hands-on lesson path.
 ### Suggested Flow
 1. Run [00_Setup_Database.sql](00_Setup_Database.sql)
 2. Complete lessons in numeric order from [01_Introduction_to_SQL.sql](01_Introduction_to_SQL.sql) to [17_Advanced_SQL.sql](17_Advanced_SQL.sql)
-3. Solve [16_SQL_Challenges.sql](16_SQL_Challenges.sql)
-4. Check with [16_SQL_Challenges_Answers.sql](16_SQL_Challenges_Answers.sql)
-5. Use [00_Reset_Database.sql](00_Reset_Database.sql) whenever you want a fresh start
+3. Practice with [16_SQL_Challenges.sql](16_SQL_Challenges.sql) for foundational problem-solving
+4. Progress to [16_SQL_Challenges_Extended.sql](16_SQL_Challenges_Extended.sql) for 50+ advanced scenarios
+5. Check with [16_SQL_Challenges_Answers.sql](16_SQL_Challenges_Answers.sql)
+6. Use [00_Reset_Database.sql](00_Reset_Database.sql) whenever you want a fresh start
 
 ## What Makes This Repo Useful
 
