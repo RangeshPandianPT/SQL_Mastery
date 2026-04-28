@@ -24,6 +24,7 @@ Learn SQL from scratch using a structured, hands-on lesson path.
 | 15 | [Constraints](15_Constraints.sql) | Data integrity rules and enforcement |
 | 16 | [SQL Challenges](16_SQL_Challenges.sql) | Practice tasks for interview-style problem solving |
 | 16A | [Challenge Answers](16_SQL_Challenges_Answers.sql) | Reference solutions for challenge tasks |
+| 16B | [Extended Challenges](16_SQL_Challenges_Extended.sql) | 50+ problems organized by difficulty & real-world scenarios |
 | 17 | [Advanced SQL](17_Advanced_SQL.sql) | CTEs, window functions, and transactions |
 | 00R | [Reset Database](00_Reset_Database.sql) | Quickly reset environment before rerunning lessons |
 
@@ -36,9 +37,10 @@ Learn SQL from scratch using a structured, hands-on lesson path.
 ### Suggested Flow
 1. Run [00_Setup_Database.sql](00_Setup_Database.sql)
 2. Complete lessons in numeric order from [01_Introduction_to_SQL.sql](01_Introduction_to_SQL.sql) to [17_Advanced_SQL.sql](17_Advanced_SQL.sql)
-3. Solve [16_SQL_Challenges.sql](16_SQL_Challenges.sql)
-4. Check with [16_SQL_Challenges_Answers.sql](16_SQL_Challenges_Answers.sql)
-5. Use [00_Reset_Database.sql](00_Reset_Database.sql) whenever you want a fresh start
+3. Practice with [16_SQL_Challenges.sql](16_SQL_Challenges.sql) for foundational problem-solving
+4. Progress to [16_SQL_Challenges_Extended.sql](16_SQL_Challenges_Extended.sql) for 50+ advanced scenarios
+5. Check with [16_SQL_Challenges_Answers.sql](16_SQL_Challenges_Answers.sql)
+6. Use [00_Reset_Database.sql](00_Reset_Database.sql) whenever you want a fresh start
 
 ## What Makes This Repo Useful
 
@@ -54,6 +56,25 @@ Learn SQL from scratch using a structured, hands-on lesson path.
 3. Prefer explicit column lists over SELECT * in production queries.
 4. Add indexes only after identifying query bottlenecks.
 5. Keep constraints strong to protect data quality.
+
+## Challenge Practice Path
+
+### Original Challenges (10 problems)
+Start with [16_SQL_Challenges.sql](16_SQL_Challenges.sql) for foundational problem-solving.
+
+### Extended Challenge Set (50+ problems)
+[16_SQL_Challenges_Extended.sql](16_SQL_Challenges_Extended.sql) includes:
+- **Section A (Beginner)**: 5 challenges - SELECT, WHERE, ORDER BY, BETWEEN, IN
+- **Section B (Intermediate)**: 10 challenges - JOINs, GROUP BY, HAVING, CASE, aggregation
+- **Section C (Advanced)**: 10 challenges - Subqueries, CTEs, window functions, ranking
+- **Section D (Real-World)**: 10 practical business scenarios
+- **Section E (Optimization)**: 3 performance and indexing challenges
+- **Section F (Bonus)**: 5 tricky edge cases
+
+### Practice Recommendations
+- **Beginner → Intermediate**: 2-3 months, 1-2 hours/week
+- **Intermediate → Advanced**: 1-2 months, 3-5 hours/week
+- Real-world challenges build portfolio projects for interviews
 
 ## Contributing
 
