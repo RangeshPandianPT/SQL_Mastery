@@ -24,6 +24,7 @@ Learn SQL from scratch using a structured, hands-on lesson path.
 | 15 | [Constraints](15_Constraints.sql) | Data integrity rules and enforcement |
 | 16 | [SQL Challenges](16_SQL_Challenges.sql) | Practice tasks for interview-style problem solving |
 | 16A | [Challenge Answers](16_SQL_Challenges_Answers.sql) | Reference solutions for challenge tasks |
+| 16B | [Extended Challenges](16_SQL_Challenges_Extended.sql) | 50+ problems organized by difficulty & real-world scenarios |
 | 17 | [Advanced SQL](17_Advanced_SQL.sql) | CTEs, window functions, and transactions |
 | 00R | [Reset Database](00_Reset_Database.sql) | Quickly reset environment before rerunning lessons |
 
