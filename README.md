@@ -26,6 +26,11 @@ Learn SQL from scratch using a structured, hands-on lesson path.
 | 16A | [Challenge Answers](16_SQL_Challenges_Answers.sql) | Reference solutions for challenge tasks |
 | 16B | [Extended Challenges](16_SQL_Challenges_Extended.sql) | 50+ problems organized by difficulty & real-world scenarios |
 | 17 | [Advanced SQL](17_Advanced_SQL.sql) | CTEs, window functions, and transactions |
+| 18 | [Stored Procedures](18_Stored_Procedures.sql) | Reusable parameterized code blocks and control flow |
+| 19 | [Triggers](19_Triggers.sql) | Automating actions on INSERT, UPDATE, DELETE |
+| 20 | [Query Optimization](20_Query_Optimization.sql) | Using EXPLAIN to understand execution plans |
+| 21 | [User Management](21_User_Management.sql) | DCL, GRANT, REVOKE, and user security |
+| 22 | [JSON Data](22_JSON_Data.sql) | Storing, querying, and updating JSON documents |
 | 00R | [Reset Database](00_Reset_Database.sql) | Quickly reset environment before rerunning lessons |
 
 ## Getting Started
@@ -36,7 +41,7 @@ Learn SQL from scratch using a structured, hands-on lesson path.
 
 ### Suggested Flow
 1. Run [00_Setup_Database.sql](00_Setup_Database.sql)
-2. Complete lessons in numeric order from [01_Introduction_to_SQL.sql](01_Introduction_to_SQL.sql) to [17_Advanced_SQL.sql](17_Advanced_SQL.sql)
+2. Complete lessons in numeric order from [01_Introduction_to_SQL.sql](01_Introduction_to_SQL.sql) to [22_JSON_Data.sql](22_JSON_Data.sql)
 3. Practice with [16_SQL_Challenges.sql](16_SQL_Challenges.sql) for foundational problem-solving
 4. Progress to [16_SQL_Challenges_Extended.sql](16_SQL_Challenges_Extended.sql) for 50+ advanced scenarios
 5. Check with [16_SQL_Challenges_Answers.sql](16_SQL_Challenges_Answers.sql)
