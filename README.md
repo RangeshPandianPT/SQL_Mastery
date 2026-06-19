@@ -31,6 +31,10 @@ Learn SQL from scratch using a structured, hands-on lesson path.
 | 20 | [Query Optimization](20_Query_Optimization.sql) | Using EXPLAIN to understand execution plans |
 | 21 | [User Management](21_User_Management.sql) | DCL, GRANT, REVOKE, and user security |
 | 22 | [JSON Data](22_JSON_Data.sql) | Storing, querying, and updating JSON documents |
+| 23 | [Database Design](23_Database_Design.sql) | Normalization forms (1NF, 2NF, 3NF) |
+| 24 | [Concurrency](24_Concurrency.sql) | ACID, Isolation Levels, and Locks |
+| 25 | [Full-Text Search](25_Full_Text_Search.sql) | MATCH() AGAINST() and Boolean Text Search |
+| 26 | [Import & Export](26_Import_Export.sql) | LOAD DATA INFILE and OUTFILE exports |
 | 00R | [Reset Database](00_Reset_Database.sql) | Quickly reset environment before rerunning lessons |
 
 ## Getting Started
@@ -41,7 +45,7 @@ Learn SQL from scratch using a structured, hands-on lesson path.
 
 ### Suggested Flow
 1. Run [00_Setup_Database.sql](00_Setup_Database.sql)
-2. Complete lessons in numeric order from [01_Introduction_to_SQL.sql](01_Introduction_to_SQL.sql) to [22_JSON_Data.sql](22_JSON_Data.sql)
+2. Complete lessons in numeric order from [01_Introduction_to_SQL.sql](01_Introduction_to_SQL.sql) to [26_Import_Export.sql](26_Import_Export.sql)
 3. Practice with [16_SQL_Challenges.sql](16_SQL_Challenges.sql) for foundational problem-solving
 4. Progress to [16_SQL_Challenges_Extended.sql](16_SQL_Challenges_Extended.sql) for 50+ advanced scenarios
 5. Check with [16_SQL_Challenges_Answers.sql](16_SQL_Challenges_Answers.sql)

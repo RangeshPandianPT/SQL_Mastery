@@ -63,6 +63,25 @@ GROUP BY department;
 
 
 -- ============================================
+-- PART 4: COMPOSITE AND COVERING INDEXES
+-- ============================================
+
+-- A Composite Index spans multiple columns. 
+-- Useful when queries filter by multiple conditions.
+CREATE INDEX idx_emp_dept_salary ON employees(department, salary);
+
+-- The order of columns in a composite index matters!
+-- It can optimize this query perfectly:
+EXPLAIN SELECT * FROM employees WHERE department = 'Engineering' AND salary > 80000;
+
+-- A Covering Index is an index that contains ALL the data a query needs.
+-- This allows the DB to fetch results directly from the index without reading the actual table row.
+-- E.g., if we only ask for department and salary, and there's an index on (department, salary):
+EXPLAIN SELECT department, salary FROM employees WHERE department = 'Sales';
+-- In EXPLAIN, look for "Using index" in the 'Extra' column, meaning it's a Covering Index query.
+
+
+-- ============================================
 -- PRACTICE TASKS
 -- ============================================
 /*
