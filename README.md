@@ -35,7 +35,65 @@ Learn SQL from scratch using a structured, hands-on lesson path.
 | 24 | [Concurrency](24_Concurrency.sql) | ACID, Isolation Levels, and Locks |
 | 25 | [Full-Text Search](25_Full_Text_Search.sql) | MATCH() AGAINST() and Boolean Text Search |
 | 26 | [Import & Export](26_Import_Export.sql) | LOAD DATA INFILE and OUTFILE exports |
+| 27 | [Recursive CTEs](27_Recursive_CTEs.sql) | Hierarchical data and WITH RECURSIVE |
+| 28 | [Dynamic SQL](28_Dynamic_SQL.sql) | PREPARE and EXECUTE statements |
+| 29 | [Advanced Error Handling](29_Advanced_Error_Handling.sql) | DECLARE HANDLER and Cursors |
+| 30 | [Data Warehousing (OLAP)](30_Data_Warehousing.sql) | Analytical queries, ROLLUP, and Grouping |
 | 00R | [Reset Database](00_Reset_Database.sql) | Quickly reset environment before rerunning lessons |
+
+## Database Schema
+
+Below is the Entity-Relationship Diagram (ERD) representing the `school_management` practice database:
+
+```mermaid
+erDiagram
+    teachers {
+        INT teacher_id PK
+        VARCHAR first_name
+        VARCHAR last_name
+        VARCHAR email
+        VARCHAR subject
+        DATE hire_date
+        DECIMAL salary
+        VARCHAR department
+    }
+    
+    employees {
+        INT employee_id PK
+        VARCHAR first_name
+        VARCHAR last_name
+        VARCHAR email
+        VARCHAR department
+        DECIMAL salary
+        DATE hire_date
+        BOOLEAN is_active
+    }
+    
+    products {
+        INT product_id PK
+        VARCHAR product_name
+        VARCHAR category
+        DECIMAL price
+        INT stock_quantity
+        TIMESTAMP created_at
+    }
+    
+    orders {
+        INT order_id PK
+        VARCHAR customer_name
+        INT product_id FK
+        INT quantity
+        DATETIME order_date
+        DECIMAL total_amount
+        ENUM status
+    }
+    
+    products ||--o{ orders : "has"
+```
+
+## Application Integration
+
+Check out the [`app_integration/`](app_integration/) directory for a complete Node.js code example demonstrating how to connect to this database, use connection pooling, and prevent SQL injection.
 
 ## Getting Started
 
