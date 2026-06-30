@@ -1,0 +1,14 @@
+{
+  "name": "sql-app-integration",
+  "version": "1.0.0",
+  "description": "Demo for integrating SQL Mastery with a Node.js backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "mysql2": "^3.9.0"
+  },
+  "author": "",
+  "license": "MIT"
+}
