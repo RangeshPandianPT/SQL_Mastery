@@ -39,6 +39,8 @@ Learn SQL from scratch using a structured, hands-on lesson path.
 | 28 | [Dynamic SQL](28_Dynamic_SQL.sql) | PREPARE and EXECUTE statements |
 | 29 | [Advanced Error Handling](29_Advanced_Error_Handling.sql) | DECLARE HANDLER and Cursors |
 | 30 | [Data Warehousing (OLAP)](30_Data_Warehousing.sql) | Analytical queries, ROLLUP, and Grouping |
+| 31 | [Table Partitioning](31_Table_Partitioning.sql) | RANGE, LIST, HASH partitioning for large tables |
+| 32 | [Geospatial Data](32_Geospatial_Data.sql) | Spatial data types and ST_Distance_Sphere |
 | 00R | [Reset Database](00_Reset_Database.sql) | Quickly reset environment before rerunning lessons |
 
 ## Database Schema
@@ -93,15 +95,29 @@ erDiagram
 
 ## Application Integration
 
-Check out the [`app_integration/`](app_integration/) directory for a complete Node.js code example demonstrating how to connect to this database, use connection pooling, and prevent SQL injection.
+Check out the [`app_integration/`](app_integration/) directory for examples demonstrating how to connect to this database and run queries from different programming languages:
+- **Node.js**: Connection pooling and preventing SQL injection.
+- **Python**: Using `mysql-connector-python` to fetch data.
+- **Java**: Standard JDBC implementation.
+
+## Interactive CLI Tool
+
+Want to practice your queries without opening a heavy GUI? We included a lightweight Python CLI tool! Check out the [`cli_tool/`](cli_tool/) directory to run an interactive query terminal.
 
 ## Getting Started
 
 ### Prerequisites
-- MySQL Server (recommended)
-- Any SQL client: MySQL Workbench, DBeaver, VS Code extension, or MySQL CLI
+- **Option A (Docker - Recommended)**: Docker Desktop installed.
+- **Option B (Local)**: MySQL Server installed locally.
+- Any SQL client: MySQL Workbench, DBeaver, VS Code extension, or MySQL CLI.
 
 ### Suggested Flow
+
+**With Docker:**
+1. Run `docker-compose up -d` in the root directory. This will spin up a MySQL database and automatically run the `00_Setup_Database.sql` script.
+2. Connect your SQL client to `localhost:3306` with user `root` and password `rootpassword`.
+
+**With Local Installation:**
 1. Run [00_Setup_Database.sql](00_Setup_Database.sql)
 2. Complete lessons in numeric order from [01_Introduction_to_SQL.sql](01_Introduction_to_SQL.sql) to [26_Import_Export.sql](26_Import_Export.sql)
 3. Practice with [16_SQL_Challenges.sql](16_SQL_Challenges.sql) for foundational problem-solving
