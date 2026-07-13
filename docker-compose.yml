@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  mysql-db:
+    image: mysql:8.0
+    container_name: sql_mastery_db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: school_management
+      MYSQL_USER: practice_user
+      MYSQL_PASSWORD: practicepassword
+    ports:
+      - "3306:3306"
+    volumes:
+      # Only run the setup script on initialization
+      - ./00_Setup_Database.sql:/docker-entrypoint-initdb.d/00_Setup_Database.sql
+    command: --default-authentication-plugin=mysql_native_password
