@@ -12,3 +12,8 @@ Thumbs.db
 *.tmp
 *.bak
 *.sql~
+
+# Build artifacts & databases
+target/
+__pycache__/
+*.db
