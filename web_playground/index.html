@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Mastery - Interactive Web Playground</title>
+    <meta name="description" content="Master SQL directly in your browser with live query execution, schema ERD visualizer, and challenge evaluator.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- SQL.js WebAssembly -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <i class="fa-solid fa-database logo-icon"></i>
+                <div class="brand-text">
+                    <h2>SQL Mastery</h2>
+                    <span class="badge">Web Playground</span>
+                </div>
+            </div>
+
+            <nav class="nav-menu">
+                <button class="nav-item active" data-tab="editor-tab" id="nav-editor">
+                    <i class="fa-solid fa-code"></i> Query Editor
+                </button>
+                <button class="nav-item" data-tab="challenges-tab" id="nav-challenges">
+                    <i class="fa-solid fa-trophy"></i> Practice Challenges
+                </button>
+                <button class="nav-item" data-tab="erd-tab" id="nav-erd">
+                    <i class="fa-solid fa-sitemap"></i> ERD Schema
+                </button>
+                <button class="nav-item" data-tab="dialect-tab" id="nav-dialect">
+                    <i class="fa-solid fa-book"></i> Dialect Cheatsheet
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="btn btn-secondary" id="btn-reset-db">
+                    <i class="fa-solid fa-rotate-left"></i> Reset Database
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header Bar -->
+            <header class="top-header">
+                <div class="header-status">
+                    <span class="status-indicator online"></span>
+                    <span id="db-status-text">Database Ready (In-Memory WASM Engine)</span>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-outline" id="btn-sample-queries">
+                        <i class="fa-solid fa-lightbulb"></i> Load Sample Query
+                    </button>
+                    <button class="btn btn-primary" id="btn-run-query">
+                        <i class="fa-solid fa-play"></i> Run Query (Ctrl+Enter)
+                    </button>
+                </div>
+            </header>
+
+            <!-- Tab 1: Editor View -->
+            <div class="tab-content active" id="editor-tab">
+                <div class="playground-layout">
+                    <!-- Editor Box -->
+                    <div class="panel editor-panel">
+                        <div class="panel-header">
+                            <span><i class="fa-solid fa-terminal"></i> SQL Query Input</span>
+                            <span class="shortcut-hint">Shortcuts: Ctrl + Enter to execute</span>
+                        </div>
+                        <textarea id="sql-input" placeholder="Enter your SQL query here... e.g. SELECT * FROM employees;"></textarea>
+                    </div>
+
+                    <!-- Schema & Table Explorer Sidebar -->
+                    <div class="panel schema-panel">
+                        <div class="panel-header">
+                            <span><i class="fa-solid fa-table"></i> Schema Browser</span>
+                        </div>
+                        <div class="schema-list" id="schema-tree">
+                            <div class="loading-spinner"><i class="fa-solid fa-spinner fa-spin"></i> Loading schema...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Output Panel -->
+                <div class="panel results-panel">
+                    <div class="panel-header">
+                        <span><i class="fa-solid fa-list-check"></i> Query Results</span>
+                        <div id="result-stats" class="stats-badge">0 rows</div>
+                    </div>
+                    <div class="results-container" id="results-output">
+                        <div class="empty-state">
+                            <i class="fa-solid fa-bolt"></i>
+                            <p>Write a query above and click <strong>Run Query</strong> to see live output.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: Practice Challenges -->
+            <div class="tab-content" id="challenges-tab">
+                <div class="challenges-container">
+                    <div class="challenge-list-panel">
+                        <h3><i class="fa-solid fa-list-ol"></i> Challenges</h3>
+                        <div class="challenge-items" id="challenge-list-items">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+                    <div class="challenge-detail-panel">
+                        <div id="challenge-detail-content">
+                            <h3>Select a Challenge from the list</h3>
+                            <p>Choose any task on the left to read requirements, attempt solutions, and test accuracy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 3: ERD Schema -->
+            <div class="tab-content" id="erd-tab">
+                <div class="panel erd-card">
+                    <h3><i class="fa-solid fa-diagram-project"></i> Entity Relationship Diagram (school_management)</h3>
+                    <div class="erd-grid">
+                        <div class="erd-table-card">
+                            <div class="erd-table-header"><i class="fa-solid fa-chalkboard-user"></i> teachers</div>
+                            <ul class="erd-cols">
+                                <li><span class="pk">PK</span> teacher_id (INT)</li>
+                                <li>first_name (VARCHAR)</li>
+                                <li>last_name (VARCHAR)</li>
+                                <li>email (VARCHAR)</li>
+                                <li>subject (VARCHAR)</li>
+                                <li>hire_date (DATE)</li>
+                                <li>salary (DECIMAL)</li>
+                            </ul>
+                        </div>
+                        <div class="erd-table-card">
+                            <div class="erd-table-header"><i class="fa-solid fa-users"></i> employees</div>
+                            <ul class="erd-cols">
+                                <li><span class="pk">PK</span> employee_id (INT)</li>
+                                <li>first_name (VARCHAR)</li>
+                                <li>last_name (VARCHAR)</li>
+                                <li>email (VARCHAR)</li>
+                                <li>department (VARCHAR)</li>
+                                <li>salary (DECIMAL)</li>
+                                <li>is_active (BOOLEAN)</li>
+                            </ul>
+                        </div>
+                        <div class="erd-table-card">
+                            <div class="erd-table-header"><i class="fa-solid fa-box"></i> products</div>
+                            <ul class="erd-cols">
+                                <li><span class="pk">PK</span> product_id (INT)</li>
+                                <li>product_name (VARCHAR)</li>
+                                <li>category (VARCHAR)</li>
+                                <li>price (DECIMAL)</li>
+                                <li>stock_quantity (INT)</li>
+                            </ul>
+                        </div>
+                        <div class="erd-table-card">
+                            <div class="erd-table-header"><i class="fa-solid fa-cart-shopping"></i> orders</div>
+                            <ul class="erd-cols">
+                                <li><span class="pk">PK</span> order_id (INT)</li>
+                                <li>customer_name (VARCHAR)</li>
+                                <li><span class="fk">FK</span> product_id (INT)</li>
+                                <li>quantity (INT)</li>
+                                <li>total_amount (DECIMAL)</li>
+                                <li>status (ENUM)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 4: Dialect Cheatsheet -->
+            <div class="tab-content" id="dialect-tab">
+                <div class="panel cheatsheet-card">
+                    <h3><i class="fa-solid fa-book-open"></i> SQL Dialect Quick Reference</h3>
+                    <table class="cheatsheet-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>MySQL</th>
+                                <th>PostgreSQL</th>
+                                <th>SQLite</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Auto Increment PK</td>
+                                <td><code>AUTO_INCREMENT</code></td>
+                                <td><code>SERIAL</code></td>
+                                <td><code>AUTOINCREMENT</code></td>
+                            </tr>
+                            <tr>
+                                <td>String Concatenation</td>
+                                <td><code>CONCAT(a, b)</code></td>
+                                <td><code>a || b</code></td>
+                                <td><code>a || b</code></td>
+                            </tr>
+                            <tr>
+                                <td>Limit & Offset</td>
+                                <td><code>LIMIT n OFFSET m</code></td>
+                                <td><code>LIMIT n OFFSET m</code></td>
+                                <td><code>LIMIT n OFFSET m</code></td>
+                            </tr>
+                            <tr>
+                                <td>Upsert</td>
+                                <td><code>ON DUPLICATE KEY UPDATE</code></td>
+                                <td><code>ON CONFLICT DO UPDATE</code></td>
+                                <td><code>ON CONFLICT DO UPDATE</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
