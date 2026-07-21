@@ -1,12 +1,14 @@
 # SQL Mastery
 
-Learn SQL from scratch using a structured, hands-on lesson path.
+Learn SQL from scratch using a structured, hands-on lesson path, interactive web playground, terminal CLI, multi-dialect support, and real-world analytical case studies.
 
 ## Course Contents
 
 | # | Lesson | Topics Covered |
 |---|--------|----------------|
-| 00 | [Setup Database](00_Setup_Database.sql) | Create clean schema and seed data for practice |
+| 00 | [Setup Database (MySQL)](00_Setup_Database.sql) | Create clean MySQL schema and seed data |
+| 00PG | [Setup Database (PostgreSQL)](00_Setup_Database_PostgreSQL.sql) | PostgreSQL-compatible setup script |
+| 00LITE | [Setup Database (SQLite)](00_Setup_Database_SQLite.sql) | Zero-config SQLite setup script |
 | 01 | [Introduction to SQL](01_Introduction_to_SQL.sql) | Databases, data types, CREATE TABLE, constraints, ALTER TABLE |
 | 02 | [INSERT Data](02_INSERT_Data.sql) | Single/multi-row INSERT, INSERT SELECT, UPSERT patterns |
 | 03 | [SELECT Queries](03_SELECT_Queries.sql) | SELECT, filtering, aliases, sorting, limits |
@@ -41,7 +43,35 @@ Learn SQL from scratch using a structured, hands-on lesson path.
 | 30 | [Data Warehousing (OLAP)](30_Data_Warehousing.sql) | Analytical queries, ROLLUP, and Grouping |
 | 31 | [Table Partitioning](31_Table_Partitioning.sql) | RANGE, LIST, HASH partitioning for large tables |
 | 32 | [Geospatial Data](32_Geospatial_Data.sql) | Spatial data types and ST_Distance_Sphere |
+| 33 | [SaaS Analytics](33_SaaS_Analytics.sql) | Monthly Recurring Revenue (MRR), Churn, Cohorts, ARPU |
+| 34 | [E-Commerce Analytics](34_Ecommerce_Funnel_Analytics.sql) | Conversion Funnels, Cart Abandonment, Basket Analysis |
 | 00R | [Reset Database](00_Reset_Database.sql) | Quickly reset environment before rerunning lessons |
+
+## 🌐 Interactive Web SQL Playground
+
+Want to practice SQL directly in your web browser without installing anything? Check out [`web_playground/index.html`](web_playground/index.html)!
+- **Zero Configuration**: Runs in-browser via WebAssembly SQLite engine.
+- **Interactive Features**: Live query execution, dark theme UI, ERD diagram visualizer, schema browser, and instant challenge evaluator.
+
+## 💻 Interactive Terminal CLI Tool
+
+Practice your queries directly in your terminal using the Python CLI tool in [`cli_tool/`](cli_tool/):
+```bash
+python cli_tool/interactive_practice.py
+```
+- Supports zero-config SQLite mode out of the box.
+- Supports MySQL connection with `python cli_tool/interactive_practice.py --mysql`.
+
+## 🧪 Automated Challenge Test Runner
+
+Verify your SQL challenge solutions automatically:
+```bash
+python scripts/validate_challenges.py
+```
+
+## 🔀 Multi-Dialect Support & Comparison
+
+Check out the [DIALECT_COMPARISON.md](DIALECT_COMPARISON.md) guide detailing syntax differences across **MySQL**, **PostgreSQL**, and **SQLite**.
 
 ## Database Schema
 
@@ -100,67 +130,6 @@ Check out the [`app_integration/`](app_integration/) directory for examples demo
 - **Python**: Using `mysql-connector-python` to fetch data.
 - **Java**: Standard JDBC implementation.
 
-## Interactive CLI Tool
-
-Want to practice your queries without opening a heavy GUI? We included a lightweight Python CLI tool! Check out the [`cli_tool/`](cli_tool/) directory to run an interactive query terminal.
-
-## Getting Started
-
-### Prerequisites
-- **Option A (Docker - Recommended)**: Docker Desktop installed.
-- **Option B (Local)**: MySQL Server installed locally.
-- Any SQL client: MySQL Workbench, DBeaver, VS Code extension, or MySQL CLI.
-
-### Suggested Flow
-
-**With Docker:**
-1. Run `docker-compose up -d` in the root directory. This will spin up a MySQL database and automatically run the `00_Setup_Database.sql` script.
-2. Connect your SQL client to `localhost:3306` with user `root` and password `rootpassword`.
-
-**With Local Installation:**
-1. Run [00_Setup_Database.sql](00_Setup_Database.sql)
-2. Complete lessons in numeric order from [01_Introduction_to_SQL.sql](01_Introduction_to_SQL.sql) to [26_Import_Export.sql](26_Import_Export.sql)
-3. Practice with [16_SQL_Challenges.sql](16_SQL_Challenges.sql) for foundational problem-solving
-4. Progress to [16_SQL_Challenges_Extended.sql](16_SQL_Challenges_Extended.sql) for 50+ advanced scenarios
-5. Check with [16_SQL_Challenges_Answers.sql](16_SQL_Challenges_Answers.sql)
-6. Use [00_Reset_Database.sql](00_Reset_Database.sql) whenever you want a fresh start
-
-## What Makes This Repo Useful
-
-- Lesson-by-lesson progression from basics to intermediate SQL
-- Practice-first design with exercises and reference solutions
-- Re-runnable setup and reset scripts for clean experimentation
-- Realistic sample data across employees, products, and orders tables
-
-## Best Practices
-
-1. Always run SELECT before destructive UPDATE/DELETE statements.
-2. Use transactions for important data changes.
-3. Prefer explicit column lists over SELECT * in production queries.
-4. Add indexes only after identifying query bottlenecks.
-5. Keep constraints strong to protect data quality.
-
-## Challenge Practice Path
-
-### Original Challenges (10 problems)
-Start with [16_SQL_Challenges.sql](16_SQL_Challenges.sql) for foundational problem-solving.
-
-### Extended Challenge Set (50+ problems)
-[16_SQL_Challenges_Extended.sql](16_SQL_Challenges_Extended.sql) includes:
-- **Section A (Beginner)**: 5 challenges - SELECT, WHERE, ORDER BY, BETWEEN, IN
-- **Section B (Intermediate)**: 10 challenges - JOINs, GROUP BY, HAVING, CASE, aggregation
-- **Section C (Advanced)**: 10 challenges - Subqueries, CTEs, window functions, ranking
-- **Section D (Real-World)**: 10 practical business scenarios
-- **Section E (Optimization)**: 3 performance and indexing challenges
-- **Section F (Bonus)**: 5 tricky edge cases
-
-### Practice Recommendations
-- **Beginner → Intermediate**: 2-3 months, 1-2 hours/week
-- **Intermediate → Advanced**: 1-2 months, 3-5 hours/week
-- Real-world challenges build portfolio projects for interviews
-
 ## Contributing
 
 Contributions are welcome: more exercises, additional datasets, query optimizations, and clearer explanations.
-
-
