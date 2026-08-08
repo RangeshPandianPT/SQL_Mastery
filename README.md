@@ -45,6 +45,11 @@ Learn SQL from scratch using a structured, hands-on lesson path, interactive web
 | 32 | [Geospatial Data](32_Geospatial_Data.sql) | Spatial data types and ST_Distance_Sphere |
 | 33 | [SaaS Analytics](33_SaaS_Analytics.sql) | Monthly Recurring Revenue (MRR), Churn, Cohorts, ARPU |
 | 34 | [E-Commerce Analytics](34_Ecommerce_Funnel_Analytics.sql) | Conversion Funnels, Cart Abandonment, Basket Analysis |
+| 35 | [Marketing Attribution](35_Marketing_Attribution.sql) | First-touch, Last-touch, and Linear Attribution Models |
+| 36 | [Financial Analytics](36_Financial_Analytics.sql) | Moving averages, MoM Growth, and Running Totals |
+| 37 | [Time-Series Analysis](37_Time_Series_Analysis.sql) | Sessionization and handling time gaps |
+| 99 | [Final Capstone](99_Final_Capstone.sql) | Comprehensive Data Analyst Assessment |
+| 99A | [Capstone Answers](99_Final_Capstone_Answers.sql) | Reference queries for the Capstone |
 | 00R | [Reset Database](00_Reset_Database.sql) | Quickly reset environment before rerunning lessons |
 
 ## 🌐 Interactive Web SQL Playground
@@ -129,6 +134,7 @@ Check out the [`app_integration/`](app_integration/) directory for examples demo
 - **Node.js**: Connection pooling and preventing SQL injection.
 - **Python**: Using `mysql-connector-python` to fetch data.
 - **Java**: Standard JDBC implementation.
+- **Go (Golang)**: Standard `database/sql` implementation.
 
 ## Contributing
 
