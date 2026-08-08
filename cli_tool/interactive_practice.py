@@ -11,6 +11,14 @@ import sqlite3
 import argparse
 
 try:
+    from rich.console import Console
+    from rich.table import Table
+    console = Console()
+    HAS_RICH = True
+except ImportError:
+    HAS_RICH = False
+
+try:
     import mysql.connector
     from mysql.connector import Error as MySQLError
     HAS_MYSQL = True
@@ -29,18 +37,27 @@ def create_sqlite_db():
 def format_table(headers, rows):
     if not headers:
         return ""
-    col_widths = [len(str(h)) for h in headers]
-    for row in rows:
-        for i, val in enumerate(row):
-            col_widths[i] = max(col_widths[i], len(str(val if val is not None else 'NULL')))
-    
-    header_line = " | ".join(str(h).ljust(col_widths[i]) for i, h in enumerate(headers))
-    separator = "-+-".join("-" * col_widths[i] for i in range(len(headers)))
-    row_lines = []
-    for row in rows:
-        row_lines.append(" | ".join(str(val if val is not None else 'NULL').ljust(col_widths[i]) for i, val in enumerate(row)))
-    
-    return f"{header_line}\n{separator}\n" + "\n".join(row_lines)
+    if HAS_RICH:
+        table = Table(show_header=True, header_style="bold magenta")
+        for h in headers:
+            table.add_column(str(h))
+        for row in rows:
+            table.add_row(*[str(val if val is not None else 'NULL') for val in row])
+        console.print(table)
+        return ""
+    else:
+        col_widths = [len(str(h)) for h in headers]
+        for row in rows:
+            for i, val in enumerate(row):
+                col_widths[i] = max(col_widths[i], len(str(val if val is not None else 'NULL')))
+        
+        header_line = " | ".join(str(h).ljust(col_widths[i]) for i, h in enumerate(headers))
+        separator = "-+-".join("-" * col_widths[i] for i in range(len(headers)))
+        row_lines = []
+        for row in rows:
+            row_lines.append(" | ".join(str(val if val is not None else 'NULL').ljust(col_widths[i]) for i, val in enumerate(row)))
+        
+        return f"{header_line}\n{separator}\n" + "\n".join(row_lines)
 
 def run_query(conn, query, is_sqlite=True):
     cursor = conn.cursor()
@@ -98,9 +115,15 @@ def interactive_session(conn, is_sqlite=True):
                 print(f"\n[OK] Query executed successfully. Rows affected: {affected}\n")
 
         except Exception as e:
-            print(f"\n[SQL ERROR] {e}\n")
+            if HAS_RICH:
+                console.print(f"[bold red]SQL ERROR:[/bold red] {e}")
+            else:
+                print(f"\n[SQL ERROR] {e}\n")
         except KeyboardInterrupt:
-            print("\nExiting session...")
+            if HAS_RICH:
+                console.print("\n[bold yellow]Exiting session...[/bold yellow]")
+            else:
+                print("\nExiting session...")
             break
 
 def main():
