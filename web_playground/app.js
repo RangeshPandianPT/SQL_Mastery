@@ -196,6 +196,11 @@ function setupEventListeners() {
         alert("Database successfully reset to default state!");
     });
 
+    const btnExport = document.getElementById('btn-export-csv');
+    if (btnExport) {
+        btnExport.addEventListener('click', exportToCSV);
+    }
+
     document.getElementById('sql-input').addEventListener('keydown', (e) => {
         if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
             e.preventDefault();
@@ -308,3 +313,33 @@ function loadChallengeSolution(encodedQuery) {
     const query = decodeURIComponent(encodedQuery);
     insertSampleQuery(query);
 }
+
+function exportToCSV() {
+    const table = document.querySelector('#results-output table');
+    if (!table) {
+        alert("No results to export.");
+        return;
+    }
+
+    let csv = [];
+    const rows = table.querySelectorAll('tr');
+    
+    for (let i = 0; i < rows.length; i++) {
+        let row = [], cols = rows[i].querySelectorAll('td, th');
+        for (let j = 0; j < cols.length; j++) {
+            let data = cols[j].innerText.replace(/"/g, '""');
+            row.push('"' + data + '"');
+        }
+        csv.push(row.join(','));
+    }
+
+    const csvFile = new Blob([csv.join('\n')], { type: 'text/csv' });
+    const downloadLink = document.createElement('a');
+    downloadLink.download = 'query_results.csv';
+    downloadLink.href = window.URL.createObjectURL(csvFile);
+    downloadLink.style.display = 'none';
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+}
+
