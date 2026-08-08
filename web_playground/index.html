@@ -95,7 +95,10 @@
                 <div class="panel results-panel">
                     <div class="panel-header">
                         <span><i class="fa-solid fa-list-check"></i> Query Results</span>
-                        <div id="result-stats" class="stats-badge">0 rows</div>
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <button class="btn btn-outline" id="btn-export-csv" style="padding: 4px 8px; font-size: 12px;"><i class="fa-solid fa-download"></i> Export CSV</button>
+                            <div id="result-stats" class="stats-badge">0 rows</div>
+                        </div>
                     </div>
                     <div class="results-container" id="results-output">
                         <div class="empty-state">
