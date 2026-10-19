@@ -48,6 +48,13 @@ Learn SQL from scratch using a structured, hands-on lesson path, interactive web
 | 35 | [Marketing Attribution](35_Marketing_Attribution.sql) | First-touch, Last-touch, and Linear Attribution Models |
 | 36 | [Financial Analytics](36_Financial_Analytics.sql) | Moving averages, MoM Growth, and Running Totals |
 | 37 | [Time-Series Analysis](37_Time_Series_Analysis.sql) | Sessionization and handling time gaps |
+| 38 | [A/B Testing & Experimentation](38_AB_Testing_Experimentation.sql) | Sample Ratio Mismatch (SRM), CVR lift, winsorization |
+| 39 | [Fraud Detection & Risk Scoring](39_Fraud_Detection_Risk_Scoring.sql) | Transaction velocity, impossible travel, Z-scores, multi-factor risk |
+| 40 | [Supply Chain & Inventory](40_Supply_Chain_Inventory_Optimization.sql) | Safety stock, Reorder Point (ROP), EOQ, ABC Pareto analysis |
+| 41 | [Healthcare & Clinical Analytics](41_Healthcare_Clinical_Analytics.sql) | 30-day readmissions, ALOS, bed census, appointment no-shows |
+| 42 | [HR & People Analytics](42_HR_People_Analytics.sql) | Attrition/turnover rates, compa-ratio pay equity, span of control |
+| 43 | [Slowly Changing Dimensions (SCD)](43_Slowly_Changing_Dimensions_SCD.sql) | SCD Type 1, Type 2 with AS-OF joins, and Type 3 attributes |
+| 44 | [Data Quality & Testing](44_Data_Quality_Testing_Framework.sql) | Automated PK uniqueness, orphan checks, freshness SLAs, audit scorecards |
 | 99 | [Final Capstone](99_Final_Capstone.sql) | Comprehensive Data Analyst Assessment |
 | 99A | [Capstone Answers](99_Final_Capstone_Answers.sql) | Reference queries for the Capstone |
 | 00R | [Reset Database](00_Reset_Database.sql) | Quickly reset environment before rerunning lessons |
