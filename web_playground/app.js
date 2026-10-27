@@ -105,6 +105,34 @@ const CHALLENGES = [
         desc: "Find products that have never been referenced in any order.",
         query: "SELECT p.product_id, p.product_name FROM products p LEFT JOIN orders o ON p.product_id = o.product_id WHERE o.order_id IS NULL;",
         minRows: 1
+    },
+    {
+        id: 5,
+        title: "Total Revenue by Order Status",
+        desc: "Calculate total order revenue grouped by status, sorted highest to lowest.",
+        query: "SELECT status, SUM(total_amount) AS total_revenue FROM orders GROUP BY status ORDER BY total_revenue DESC;",
+        minRows: 4
+    },
+    {
+        id: 6,
+        title: "High Earner Departments (Avg >= 65k)",
+        desc: "Find departments where the average employee salary is at least $65,000.",
+        query: "SELECT department, ROUND(AVG(salary), 2) AS avg_salary FROM employees GROUP BY department HAVING AVG(salary) >= 65000 ORDER BY avg_salary DESC;",
+        minRows: 2
+    },
+    {
+        id: 7,
+        title: "Order Details with Computed Line Total",
+        desc: "Join orders with products to compute quantity * price for each order item.",
+        query: "SELECT o.order_id, o.customer_name, p.product_name, o.quantity, ROUND(o.quantity * p.price, 2) AS computed_total FROM orders o JOIN products p ON o.product_id = p.product_id ORDER BY o.order_id ASC;",
+        minRows: 8
+    },
+    {
+        id: 8,
+        title: "2024 Hires in Target Salary Bracket",
+        desc: "Retrieve employees hired in 2024 with salaries between $60,000 and $80,000.",
+        query: "SELECT employee_id, first_name, last_name, hire_date, salary FROM employees WHERE hire_date BETWEEN '2024-01-01' AND '2024-12-31' AND salary BETWEEN 60000 AND 80000 ORDER BY salary DESC;",
+        minRows: 3
     }
 ];
 
