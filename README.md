@@ -55,6 +55,8 @@ Learn SQL from scratch using a structured, hands-on lesson path, interactive web
 | 42 | [HR & People Analytics](42_HR_People_Analytics.sql) | Attrition/turnover rates, compa-ratio pay equity, span of control |
 | 43 | [Slowly Changing Dimensions (SCD)](43_Slowly_Changing_Dimensions_SCD.sql) | SCD Type 1, Type 2 with AS-OF joins, and Type 3 attributes |
 | 44 | [Data Quality & Testing](44_Data_Quality_Testing_Framework.sql) | Automated PK uniqueness, orphan checks, freshness SLAs, audit scorecards |
+| 45 | [Customer Lifetime Value & RFM](45_Customer_Segmentation_RFM_CLV.sql) | RFM quantile scoring, NTILE(5), cohort LTV/CAC, dynamic churn risk |
+| 46 | [Graph & Network Analytics](46_Graph_Analytics_Recursive_Networks.sql) | Recursive CTE org trees, BOM parts explosion, cycle detection, shortest path |
 | 99 | [Final Capstone](99_Final_Capstone.sql) | Comprehensive Data Analyst Assessment |
 | 99A | [Capstone Answers](99_Final_Capstone_Answers.sql) | Reference queries for the Capstone |
 | 00R | [Reset Database](00_Reset_Database.sql) | Quickly reset environment before rerunning lessons |
@@ -63,7 +65,8 @@ Learn SQL from scratch using a structured, hands-on lesson path, interactive web
 
 Want to practice SQL directly in your web browser without installing anything? Check out [`web_playground/index.html`](web_playground/index.html)!
 - **Zero Configuration**: Runs in-browser via WebAssembly SQLite engine.
-- **Interactive Features**: Live query execution, dark theme UI, ERD diagram visualizer, schema browser, and instant challenge evaluator.
+- **Interactive Features**: Live query execution, dark theme UI, ERD diagram visualizer, schema browser, and 8 curated challenge problem sets.
+- **Data Export**: Instant export of SQL query output to CSV.
 
 ## 💻 Interactive Terminal CLI Tool
 
